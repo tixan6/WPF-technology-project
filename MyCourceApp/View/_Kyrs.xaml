@@ -1,0 +1,130 @@
+﻿<Page x:Class="MyCourceApp.View._Kyrs"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyCourceApp.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="440" d:DesignWidth="630"
+      Title="_Kyrs">
+
+    <Grid>
+        <Grid>
+            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+            
+
+
+            <Grid Grid.Row="0">
+                <Border Background="#FF172D46">
+            <StackPanel Orientation="Horizontal">
+                <Border Width="80" Height="35" CornerRadius="10"
+                        Background="#FF09192E" Margin="20 0 0 0">
+                    <TextBlock Text="Флаг" Foreground="White" Opacity="0.7"
+                               VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Candara Light"/>
+                </Border>
+
+                <Border Width="250" Height="35" CornerRadius="10"
+                        Background="#FF09192E" Margin="20 0 0 0">
+                    <TextBlock Text="Ваюта" Foreground="White" Opacity="0.7"
+                               VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Candara Light"/>
+                </Border>
+
+                <Border Width="100" Height="35" CornerRadius="10"
+                        Background="#FF09192E" Margin="20 0 0 0">
+                    <TextBlock Text="Покупка" Foreground="White" Opacity="0.7"
+                               VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Candara Light"/>
+                </Border>
+
+                <Border Width="100" Height="35" CornerRadius="10"
+                        Background="#FF09192E" Margin="20 0 0 0">
+                    <TextBlock Text="Продажа" Foreground="White" Opacity="0.7"
+                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+            </StackPanel>
+            </Border>
+         </Grid>
+
+            <Grid Grid.Row="1" Background="#FF172D46">
+           
+            <StackPanel Orientation="Horizontal">
+            <Border x:Name="VlagEng" Height="40" Width="40" Margin="40 0 0 0" CornerRadius="30" 
+                    HorizontalAlignment="Left" Background="Pink" 
+                    Opacity="0.7">
+                <Ellipse Width="40" Height="40">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="ENGF" Stretch="UniformToFill"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Border>
+                    
+                <TextBlock Text="1 Доллар США (USD)" Height="20" Foreground="#ffffff" Opacity="0.7"
+                       Margin="50 0 0 0" FontFamily="Tahoma" />
+                    
+
+                    <TextBlock x:Name="BuyD" Text="Покупка" Height="20" Foreground="#ffffff" Opacity="0.7"
+                       Margin="176 0 0 0" FontFamily="Candara Light"/>
+
+                <TextBlock x:Name="SellD" Text="Продажа" Height="20" Foreground="#ffffff" Opacity="0.7"
+                       Margin="80 0 0 0" FontFamily="Candara Light"/>
+            </StackPanel>
+        </Grid>
+
+            <Grid Grid.Row="2" Background="#FF172D46">
+            <StackPanel Orientation="Horizontal">
+                <Border x:Name="VlagE" Height="40" Width="40" Margin="40 0 0 0" CornerRadius="30" 
+                    HorizontalAlignment="Left" Background="Pink" 
+                    Opacity="0.7">
+                    <Ellipse Width="40" Height="40">
+                        <Ellipse.Fill>
+                            <ImageBrush x:Name="EURF" Stretch="UniformToFill"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Border>
+
+                <TextBlock Text="1 Евро (EUR)" Height="20" Foreground="#ffffff" Opacity="0.7"
+                       Margin="50 0 0 0" FontFamily="Tahoma"/>
+
+                <TextBlock x:Name="BuyE" Text="Покупка" Height="20" Foreground="#ffffff" Opacity="0.7"
+                       Margin="220 0 0 0" FontFamily="Candara Light"/>
+
+                <TextBlock x:Name="SellE" Text="Продажа" Height="20" Foreground="#ffffff" Opacity="0.7"
+                       Margin="79 0 0 0" FontFamily="Candara Light"/>
+            </StackPanel>
+        </Grid>
+
+            <Grid Grid.Row="3" Background="#FF172D46">
+            <StackPanel Orientation="Horizontal">
+                <Border x:Name="VlagR" Height="40" Width="40" Margin="40 0 0 0" CornerRadius="30" 
+                    HorizontalAlignment="Left" Background="Pink" 
+                    Opacity="0.7">
+                    <Ellipse Width="40" Height="40">
+                        <Ellipse.Fill>
+                            <ImageBrush x:Name="RUBF" Stretch="UniformToFill"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Border>
+
+                <TextBlock Text="Российских рублей (RUB)" Height="20" Foreground="#ffffff" Opacity="0.7"
+                       Margin="50 0 0 0" FontFamily="Tahoma"/>
+
+                <TextBlock x:Name="BuyR" Text="Покупка" Height="20" Foreground="#ffffff" Opacity="0.7"
+                       Margin="150 0 0 0" FontFamily="Candara Light"/>
+
+                <TextBlock x:Name="SellR" Text="Продажа" Height="20" Foreground="#ffffff" Opacity="0.7"
+                       Margin="80 0 0 0" FontFamily="Candara Light"/>
+            </StackPanel>
+        </Grid>
+           
+        </Grid>
+    </Grid>
+</Page>

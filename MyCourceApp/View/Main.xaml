@@ -1,0 +1,155 @@
+﻿<Window x:Class="MyCourceApp.View.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyCourceApp.View"
+        Title="Main" Height="470" Width="900"
+        WindowStyle="None" ResizeMode="NoResize"
+        Background="Transparent" AllowsTransparency="True"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" Activated="Window_Activated">
+    <Grid x:Name="qwe" Visibility="Visible" >
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+            <Border Grid.Row="1" CornerRadius="0" BorderBrush="AliceBlue" BorderThickness="0.2">
+                <StackPanel>
+                    <Grid Grid.Row="2" Background="#FF09192E" Height="29" MouseDown="Grid_MouseDown">
+                        <StackPanel Orientation="Horizontal" Width="40" Height="15" HorizontalAlignment="Right" >
+                            <materialDesign:PackIcon x:Name="mainMin" Kind="Circle" Width="15" Height="15" Foreground="#FF47FF65" Opacity="0.6" MouseDown="mainMin_MouseDown" MouseEnter="mainMin_MouseEnter" MouseLeave="mainMin_MouseLeave" />
+                            <materialDesign:PackIcon x:Name="mainClose" Kind="Circle" Width="15" Height="15"
+                                             Opacity="0.6" Margin="5 0 0 0" Foreground="#FFF25954" MouseDown="mainClose_MouseDown" MouseEnter="mainClose_MouseEnter" MouseLeave="mainClose_MouseLeave" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid Background="#172a45" Height="440">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="150" />
+                            <ColumnDefinition Width="169*"/>
+                            <ColumnDefinition Width="581*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Frame Visibility="Hidden" x:Name="AddNews" Background="Transparent" Height="440" Width="750" NavigationUIVisibility="Hidden"  
+                   HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="149,0,0,0"  />
+
+                        <Frame Visibility="Hidden" x:Name="KyrS" Background="Transparent" Height="440" Width="630" NavigationUIVisibility="Hidden"  
+                   HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="200,0,0,0"  />
+
+                        <Frame Visibility="Hidden" x:Name="News" Background="Transparent" Height="440" Width="750" NavigationUIVisibility="Hidden"  
+                   HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="149,0,0,0"  />
+
+                        <Frame Visibility="Hidden" x:Name="ssettings" Background="Transparent" Height="440" Width="750" NavigationUIVisibility="Hidden"  
+                   HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="149,0,0,0"  />
+
+                        <Grid Grid.Column="0" Background="#FF09192E">
+
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel>
+                                    <StackPanel Height="100">
+                                        <StackPanel Height="40" Margin="0 5 0 0" >
+                                            <Border x:Name="imgPhoto" Height="40" Width="40" Margin="5 0 0 0" CornerRadius="30" 
+                                                 HorizontalAlignment="Left" Background="Pink" 
+                                                 Opacity="0.7">
+                                                <Ellipse Width="40" Height="40">
+                                                    <Ellipse.Fill>
+                                                        <ImageBrush x:Name="AvatarName" Stretch="UniformToFill"/>
+                                                    </Ellipse.Fill>
+                                                </Ellipse>
+
+
+                                            </Border>
+
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="10 0 0 0" >
+                                            <TextBlock Foreground="#c2cbeb" x:Name="mainNamePanel" 
+                                       Opacity="0.6" TextWrapping="Wrap" Text="" Height="33" Width="140"   />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock x:Name="PhoneMain" Foreground="#c2cbeb" Margin="10 5 0 0" FontSize="10"
+                                       Opacity="0.4" TextWrapping="Wrap" Text="" Height="15" Width="100"   />
+
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <Border Width="150" Height="0.5" 
+                                    Margin="0 5 0 0" Background="#172a45" Opacity="0.8" />
+                                    <StackPanel x:Name="newsShow" Width="150" Height="30" Orientation="Horizontal" MouseDown="StackPanel_MouseDown_1"
+                                        Background="#FF09192E" MouseEnter="newsShow_MouseEnter" MouseLeave="newsShow_MouseLeave">
+                                        <materialDesign:PackIcon Kind="Newspaper" Margin="10 0 0 0"
+                                                         VerticalAlignment="Center" Foreground="#43a39b" Width="15" Height="15" />
+                                        <TextBlock x:Name="btnNews" Text="Новости" VerticalAlignment="Center" Foreground="#c2cbeb" Opacity="0.6" 
+                                           FontSize="12" Height="17" Margin="10 0 0 0" FontFamily="Dubai Medium" />
+                                    </StackPanel>
+
+                                    <StackPanel x:Name="addNews" Width="150" Height="30" Orientation="Horizontal"
+                                        MouseDown="StackPanel_MouseDown" MouseEnter="addNews_MouseEnter" 
+                                        Background="#FF09192E" MouseLeave="addNews_MouseLeave">
+                                        <materialDesign:PackIcon Kind="NewspaperPlus" Margin="10 0 0 0"
+                                                         VerticalAlignment="Center" Foreground="#43a39b" Width="15" Height="15" />
+                                        <TextBlock x:Name="Add_news" Text= "Добавить новость" VerticalAlignment="Center" Foreground="#c2cbeb" Opacity="0.6" 
+                                           FontSize="12" Height="17" Margin="10 0 0 0"  FontFamily="Dubai Medium" />
+                                    </StackPanel>
+
+                                    <StackPanel x:Name="sett" Width="150" Height="30" Orientation="Horizontal" 
+                                        Background="#FF09192E" MouseDown="StackPanel_MouseDown_2" MouseEnter="sett_MouseEnter" MouseLeave="sett_MouseLeave">
+                                        <materialDesign:PackIcon Kind="Settings" Margin="10 0 0 0"
+                                                         VerticalAlignment="Center" Foreground="#43a39b" Width="15" Height="15" />
+                                        <TextBlock x:Name="Settings" Text= "Настройки" VerticalAlignment="Center" Foreground="#c2cbeb" Opacity="0.6" 
+                                           FontSize="12" Height="17" Margin="10 0 0 0"  FontFamily="Dubai Medium" />
+
+                                    </StackPanel>
+
+                                    <StackPanel x:Name="Kyrs" Width="150" Height="30" Orientation="Horizontal" 
+                                        Background="#FF09192E" MouseDown="Kyrs_MouseDown" MouseEnter="Kyrs_MouseEnter" MouseLeave="Kyrs_MouseLeave">
+                                        <materialDesign:PackIcon Kind="Dollar" Margin="10 0 0 0"
+                                                         VerticalAlignment="Center" Foreground="#43a39b" Width="15" Height="15" />
+                                        <TextBlock x:Name="Kyrss" Text="Курсы валют " VerticalAlignment="Center" Foreground="#c2cbeb" Opacity="0.6" 
+                                           FontSize="12" Height="17" Margin="10 0 0 0"  FontFamily="Dubai Medium" />
+
+                                    </StackPanel>
+
+                                    <StackPanel x:Name="Leav" Width="150" Height="30" Orientation="Horizontal" 
+                                        Background="#FF09192E" MouseDown="Leav_MouseDown" MouseEnter="Leav_MouseEnter" MouseLeave="Leav_MouseLeave">
+                                        <materialDesign:PackIcon Kind="ExitToApp" Margin="10 0 0 0"
+                                                         VerticalAlignment="Center" Foreground="#43a39b" Width="15" Height="15" />
+                                        <TextBlock x:Name="Leave" Text="Выйти" VerticalAlignment="Center" Foreground="#c2cbeb" Opacity="0.6" 
+                                           FontSize="12" Height="17" Margin="10 0 0 0"  FontFamily="Dubai Medium" />
+
+                                    </StackPanel>
+
+
+                                </StackPanel>
+
+                            </StackPanel>
+                            <StackPanel  VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                         Margin="5 0 0 0">
+                                <TextBlock Text="UIOPIA Desktop" Foreground="#FF999999"
+                                           FontFamily="Dubai Light" Opacity="0.4" Width="145"
+                                           FontSize="10"/>
+
+                                <TextBlock Text="Version 1.0.0 x64 - About" Foreground="#FF999999"
+                                           FontFamily="Dubai Light" Opacity="0.4" Width="145"
+                                           FontSize="10"/>
+                            </StackPanel>
+                            
+
+                        </Grid>
+
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+
+        </Grid>
+
+
+    </Grid>
+
+
+</Window>

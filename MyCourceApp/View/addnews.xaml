@@ -1,0 +1,131 @@
+﻿<Page x:Class="MyCourceApp.View.addnews"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyCourceApp.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="440" d:DesignWidth="750"
+      Title="addnews">
+
+    <Grid>
+        <Image Source="/images/BgCircle.png" 
+                 Opacity="0.05" Width="500" HorizontalAlignment="Left" />
+        
+        <Image Source="/images/BgCircle.png" 
+                 Opacity="0.05" Width="500" HorizontalAlignment="Right" />
+        <Grid>
+            
+            
+            <Border CornerRadius="10" Width="330" Height="400" Background="#09192E" 
+                    Margin="10 0 0 0" HorizontalAlignment="Left">
+                <StackPanel Orientation="Vertical" Margin="0 10 0 0" >
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Статья/Новость" Foreground="#FFFFFF"
+                                   Opacity="0.6" Margin="20 0 0 0"  FontFamily="Dubai Medium" Height="17" />
+                        <Border CornerRadius="10" Height="150" Width="300"
+                                Background="#172A45" Margin="0 5 0 0" Opacity="0.9" 
+                                >
+                            <TextBox TextWrapping="Wrap" x:Name="txtnews" Height="140" Width="290" BorderBrush="Transparent" 
+                                     Style="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                     CaretBrush="White"  Opacity="0.6"
+                                     FontFamily="Dubai Light" Foreground="#FFFFFF" Cursor="IBeam" PreviewTextInput="txtnews_PreviewTextInput" />
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Margin="15 15 0 0"  Orientation="Horizontal">
+                        <Border CornerRadius="10" Height="100" Width="100"
+                                Background="#172A45" Opacity="0.9" >
+
+                            <Image x:Name="imageAdd" Width="90" Height="90"/>
+
+                        </Border>
+                        
+                        <TextBlock x:Name="txtPrim" TextWrapping="Wrap" Width="200" Margin="5 0 0 0"
+                                   FontFamily="Dubai Light" Foreground="#ffffff" Text="Текст на проверку" Opacity="0.6" Height="94" Cursor="IBeam" />
+                    </StackPanel>
+                    <TextBlock x:Name="AddPhoto"  HorizontalAlignment="Left" Text="Добавить фото" Foreground="#ffffff" Opacity="0.6"
+                               FontSize="10" Margin="33 3 0 0" Width="68" FontFamily="Dubai Light" Height="14" MouseDown="TextBlock_MouseDown" MouseEnter="TextBlock_MouseEnter" MouseLeave="AddPhoto_MouseLeave" />
+                    <StackPanel VerticalAlignment="Bottom">
+
+                        <StackPanel Margin="0 30 0 0" >
+                            <TextBlock x:Name="newsAddText" Text="" Foreground="#FF72B960" 
+                                       FontFamily="Dubai Light" Width="95" Height="20" />
+                            <Button Content="Добавить запись" Background="#0a192f" Foreground="#52cbb7" 
+                            BorderThickness="0.5" BorderBrush="#52cbb7"  Width="200" 
+                            Height="30"  Cursor="Hand" Click="Button_Click"/>
+                        </StackPanel>
+                        
+                    </StackPanel>
+                    
+                </StackPanel>
+                
+            </Border>
+
+            <Border HorizontalAlignment="Right" Width="400" CornerRadius="30" Background="#09192E"
+                    Margin="0 20 0 20">
+                <StackPanel>
+                    <TextBlock Text="Ваши записи" Foreground="#ffffff" Opacity="0.7"
+                               Margin="30 15 0 5" FontFamily="Dubai Medium" />
+                    <Border Width="350" Height="300" CornerRadius="10" Background="#172A45">
+                        <Border Grid.Row="1">
+                            <ScrollViewer >
+                                <ItemsControl ItemsSource="{Binding ItemsMain}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition/>
+                                                    
+                                                </Grid.ColumnDefinitions>
+
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+
+
+                                                <Border Width="100" Height="100"                                  
+                                     CornerRadius="10" Margin="5 10 0 0"
+                                    Background="#0a192f" Grid.Row="0">
+                                                    <Image Source="{Binding img}"  Width="90" Height="90" />
+                                                    
+                                                </Border>
+
+                                                <TextBlock Text="{Binding text}" Grid.Column="1" FontSize="14" Margin="5 15 0 0"
+                                   Foreground="White" Opacity="0.7" FontFamily="Dubai Light" TextWrapping="Wrap" />
+
+                                                
+                                            </Grid>
+                                            
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                        </Border>
+                    </Border>
+                    <StackPanel>
+                        
+                    </StackPanel>
+                    <StackPanel >
+                        <StackPanel Visibility="Hidden" Orientation="Horizontal" HorizontalAlignment="Center"
+                                    x:Name="YouHaveNot">
+
+                            <TextBlock Text="У вас нет записей" Foreground="#FFF48E06" VerticalAlignment="Center"
+                                   FontFamily="Dubai Light" Height="16" Width="95" x:Name="notList" />
+                        </StackPanel>
+                        
+                        <Button Content="Удалить запись" Background="Transparent" Foreground="#FFFF3E3E" 
+                            BorderThickness="0.5" BorderBrush="#FFFF3E3E"  Width="200" 
+                            Height="30" Cursor="Hand" Click="Button_Click_1"/>
+
+                    </StackPanel>
+
+                </StackPanel>
+                
+            </Border>
+
+        </Grid>
+    </Grid>
+</Page>
